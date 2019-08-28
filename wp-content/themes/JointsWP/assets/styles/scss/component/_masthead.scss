@@ -1,0 +1,72 @@
+.dfsi {
+  .masthead {
+    font-family: "futura-pt",sans-serif;
+    position: relative;
+    z-index: 1;
+    background-image:url('../images/masthead-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    margin-top: -160px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: rem-calc(645);
+    @include breakpoint(large){
+      position: relative;
+      margin-top: -123px;
+      background-image:url('../images/masthead.jpg');
+      min-height: rem-calc(1080);
+    }
+    &__callout {
+      @include absolute-center;
+      text-align: center;
+      min-width: rem-calc(300);
+
+      h1 {
+        font-weight: bold; 
+        font-size: rem-calc(34);
+        color: $dfsi-aqua;
+        margin-bottom: rem-calc(40);
+        @include breakpoint(large){
+          font-size: rem-calc(104);
+          margin-bottom: rem-calc(60);
+        }
+        span {
+          font-weight: normal;
+          display: block;
+          font-size: rem-calc(22);
+          color: $white;
+          @include breakpoint(large){
+            letter-spacing: rem-calc(21);
+            font-size: rem-calc(40);
+          }
+          &.top {
+            @include breakpoint(myphone down){
+              letter-spacing: rem-calc(9);
+            }
+          }
+          &.bottom {
+            @include breakpoint(myphone down){
+              max-width: 65%;
+              display: block;
+              margin: 0 auto;
+              letter-spacing: 5px;
+              line-height: 1;
+            }
+          }
+        }
+      }
+
+      .button {
+        font-weight: 600;
+        width: 100%;
+        @include breakpoint(large){
+          font-size: rem-calc(18);
+          width: auto;
+        }
+      }
+    }
+  }
+}

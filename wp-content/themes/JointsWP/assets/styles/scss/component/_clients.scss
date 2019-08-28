@@ -1,0 +1,89 @@
+.dfsi {
+  .ourclients {
+    background: $fb-aqua-clients;
+
+    @include breakpoint(large) {
+      padding: rem-calc(110) 0;
+    }
+
+    &__inner {
+      width: 100%;
+
+      @include breakpoint(large) {
+        width: rem-calc(1280);
+        margin: 0 auto;
+      }
+    }
+
+    .media-object {
+      margin-bottom: 0;
+      &.stack-for-small {
+        padding-bottom: rem-calc(60);
+        @include breakpoint(myphone down) {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          .media-object-section {
+            padding: 0;
+            padding-bottom: 0;
+            flex-basis: 100%;
+            max-width: 100%;
+            &.ourclients__img {
+              padding: rem-calc(40) 0;
+              text-align: center;
+              order:1;
+            }
+            &.ourclients__text {
+              padding:0 rem-calc(20);
+              order:2;
+            }
+          }
+        }
+      }
+      
+      .thumbnail {
+        border: none;
+        box-shadow: none;
+      }
+
+      h4 {
+        font-weight: 300;
+        font-size: rem-calc(38);
+        @include breakpoint(large) {
+          font-size: rem-calc(60);
+        }
+      }
+
+      p {
+        color: $white;
+        &.quote{
+          font-size: rem-calc(18);
+        }
+        &.text {
+          font-family: futura-pt, sans-serif;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 1.2;
+          padding-bottom: rem-calc(35);
+          @include breakpoint(large) {
+            font-size: rem-calc(22);
+            padding-bottom: inherit;
+          }
+        }
+
+        &.quote {
+          @include breakpoint(large) {
+            font-size: rem-calc(32);
+            margin-bottom: rem-calc(32);
+          }
+        }
+      }
+    }
+
+    .media-object-section {
+      &:first-child {
+        padding-right: rem-calc(200);
+      }
+    }
+  }
+}

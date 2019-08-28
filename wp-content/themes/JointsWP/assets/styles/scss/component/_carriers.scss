@@ -1,0 +1,36 @@
+.dfsi {
+  .carriers {
+    background: $fb-gray3;
+    // padding: 0 rem-calc(20);
+    // @include breakpoint(large){
+    //   padding: rem-calc(60) 0 0 0;
+    // }
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items:center;
+      width: 100%;
+      padding: rem-calc(40) 0;
+      @include breakpoint(large) {
+        width: rem-calc(1280);
+        margin: 0 auto;
+        padding: rem-calc(40) 0 rem-calc(40) 0;
+      }
+    }
+    &__logo {
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+      @include breakpoint(large){
+        margin-right: rem-calc(120);
+        margin-bottom: rem-calc(60);
+      }
+      @include breakpoint(myphone down) {
+        padding: rem-calc(10) rem-calc(5);
+        width: 50%;
+      }
+    }
+  }
+}
