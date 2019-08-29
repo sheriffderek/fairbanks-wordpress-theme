@@ -13,11 +13,11 @@
   }
   .title {
     margin-top: $pad*2;
+    @include standard-voice();
     font-weight: 700;
   }
   .introduction {
-    margin-top: $pad*2;
-    line-height: 1.5; // should be a type-pattern / mixin
+    @include standard-voice();
   }
   .button {
     margin-top: $pad*2;

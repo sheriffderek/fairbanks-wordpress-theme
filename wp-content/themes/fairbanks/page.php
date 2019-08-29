@@ -17,6 +17,8 @@ get_template_part('parts/content', 'masthead')
 
 <?php if ( is_page('our-team') ) { ?>
 
+  <?php include 'modules/page-masthead.php'; ?>
+
   <?php include 'modules/team-members.php'; ?>
 
 <?php } ?>

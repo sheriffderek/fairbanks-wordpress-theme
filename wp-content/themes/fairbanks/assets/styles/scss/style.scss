@@ -108,13 +108,15 @@ figure.image {
 .page-section {
   .inner-column {
     width: 98%;
-    max-width: 1100px; // $temp
+    max-width: 1300px; // $temp - $todo - should be a setting
     margin-right: auto;
     margin-left: auto;
     padding: $pad;
   }
   a {
     display: block; // $temp
+    cursor: pointer;
+    color: inherit;
   }
   @media (min-width: 400px) {
     .inner-column {
@@ -129,6 +131,8 @@ figure.image {
 
 
 //// $modules
+@import "modules/page-masthead";
+
 @import "modules/team-members";
 @import "modules/team-member-detail";
 

@@ -7,9 +7,7 @@
     overflow: hidden;
   }
   .name {
-    font-family: $secondary-font;
-    font-size: 30px;
-    font-weight: 700; // should be a type-pattern / mixin
+    @include medium-voice();
   }
   .title {
     margin-top: $pad*2;
@@ -20,7 +18,7 @@
     line-height: 1.5; // should be a type-pattern / mixin
   }
   .button {
-    margin-top: $pad*2;
+    padding: $pad*2 0;
   }
   .portrait {
     //
