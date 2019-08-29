@@ -1,62 +1,62 @@
 .dfsi {
-  .ourteam {
-    background-image:url('../images/bg-team-mobile.jpg');
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: center center;
-    @include breakpoint(large){
-      background-image:url('../images/bg-clients.jpg');
-    }
-    &__inner {
-      position: relative;
-      width: 100%;
-      min-height: rem-calc(680);
-      padding: 0 rem-calc(20);
-      @include breakpoint(large){
-        width: rem-calc(1280);
-        min-height: rem-calc(1080);
-        margin: 0 auto;
-        padding: inherit;
-      }
-    }
-    &__text {
-      h4 {
-        font-weight: 300;
-        font-size: rem-calc(38);
-        @include breakpoint(large) {
-          font-size: rem-calc(60);
-        }
-      }
-      p {
-        color: $white;
-        &.quote {
-          font-size:rem-calc(18);
-          @include breakpoint(large){
-            font-size:rem-calc(32);
-          }
-        }
-        &.text {
-          font-style: italic;
-          line-height: 1.5;
-          @include breakpoint(large){
-            font-size:rem-calc(22);
-            line-height: 1.2;
-          }
-        }
-      }
-      .button {
-        color:$white;
-        font-weight: bold;
-        padding-right: rem-calc(60);
-        padding-left: rem-calc(60);
-        @include breakpoint(large){
-          color:$black;
-        }
-      }
-      @include vertical-center;
-      @include breakpoint(large){
-        max-width: rem-calc(850);
-      }
-    }   
-  }
+  // .ourteam {
+  //   background-image:url('../images/bg-team-mobile.jpg');
+  //   background-repeat:no-repeat;
+  //   background-size: cover;
+  //   background-position: center center;
+  //   @include breakpoint(large){
+  //     background-image:url('../images/bg-clients.jpg');
+  //   }
+  //   &__inner {
+  //     position: relative;
+  //     width: 100%;
+  //     min-height: rem-calc(680);
+  //     padding: 0 rem-calc(20);
+  //     @include breakpoint(large){
+  //       width: rem-calc(1280);
+  //       min-height: rem-calc(1080);
+  //       margin: 0 auto;
+  //       padding: inherit;
+  //     }
+  //   }
+  //   &__text {
+  //     h4 {
+  //       font-weight: 300;
+  //       font-size: rem-calc(38);
+  //       @include breakpoint(large) {
+  //         font-size: rem-calc(60);
+  //       }
+  //     }
+  //     p {
+  //       color: $white;
+  //       &.quote {
+  //         font-size:rem-calc(18);
+  //         @include breakpoint(large){
+  //           font-size:rem-calc(32);
+  //         }
+  //       }
+  //       &.text {
+  //         font-style: italic;
+  //         line-height: 1.5;
+  //         @include breakpoint(large){
+  //           font-size:rem-calc(22);
+  //           line-height: 1.2;
+  //         }
+  //       }
+  //     }
+  //     .button {
+  //       color:$white;
+  //       font-weight: bold;
+  //       padding-right: rem-calc(60);
+  //       padding-left: rem-calc(60);
+  //       @include breakpoint(large){
+  //         color:$black;
+  //       }
+  //     }
+  //     @include vertical-center;
+  //     @include breakpoint(large){
+  //       max-width: rem-calc(850);
+  //     }
+  //   }   
+  // }
 }

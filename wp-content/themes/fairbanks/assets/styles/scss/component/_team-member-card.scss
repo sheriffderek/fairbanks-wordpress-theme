@@ -1,0 +1,60 @@
+
+.team-member-card {
+  //
+  .head-shot {
+    max-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .name {
+    font-family: $secondary-font;
+    font-size: 30px;
+    font-weight: 700; // should be a type-pattern / mixin
+  }
+  .title {
+    margin-top: $pad*2;
+    font-weight: 700;
+  }
+  .introduction {
+    margin-top: $pad*2;
+    line-height: 1.5; // should be a type-pattern / mixin
+  }
+  .button {
+    margin-top: $pad*2;
+  }
+  .portrait {
+    //
+  }
+  .info {
+    //
+  }
+  @media (max-width: 699px) { // should be a mixin
+    .info {
+      margin-top: $pad*2;
+    }
+  }
+  @media (min-width: 700px) { // should be a mixin
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .portrait {
+      // width: 400px;
+      flex-shrink: 0;
+      margin-left: $pad*6;
+      order: 2;
+    }
+    .info {
+      flex-basis: 600px;
+    }
+  }
+  @media (min-width: 900px) { // should be a mixin
+    //
+    .portrait {
+      width: 400px;
+    }
+    .info {
+      flex-basis: 600px;
+    }
+  }
+}

@@ -28,9 +28,9 @@ CSS file.
 @include foundation-xy-grid-classes;
 
 @include foundation-flex-classes;
-@include foundation-typography;
+// @include foundation-typography;
 @include foundation-forms;
-@include foundation-button;
+// @include foundation-button;
 @include foundation-accordion;
 @include foundation-accordion-menu;
 @include foundation-badge;
@@ -68,6 +68,7 @@ CSS file.
 @import "global/global";
 @import "global/type";
 @import "global/single-page";
+
 @import "component/date";
 @import "component/sidebar";
 @import "component/navigation";
@@ -79,3 +80,63 @@ CSS file.
 @import "component/clients";
 @import "component/team";
 @import "component/footer";
+
+
+
+//// $temporary - just dropping a few things here - until i sort out what parts of foundation are fighting me
+.thing {
+  //
+}
+
+//// $reset
+@import "resets/meyer-reset";
+
+
+//// $global
+// @import "global/type-patterns";
+
+$pad: 10px;
+
+figure.image {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.page-section {
+  .inner-column {
+    width: 98%;
+    max-width: 1100px; // $temp
+    margin-right: auto;
+    margin-left: auto;
+    padding: $pad;
+  }
+  a {
+    display: block; // $temp
+  }
+  @media (min-width: 400px) {
+    .inner-column {
+      width: 96%;
+    }
+  }
+}
+
+
+//// $components
+@import "component/team-member-card";
+
+
+//// $modules
+@import "modules/team-members";
+@import "modules/team-member-detail";
+
+
+//// $pages
+// @import "pages/our-team";
+
+
+//// $utilities
+// @import "utilities/a11y";
+
