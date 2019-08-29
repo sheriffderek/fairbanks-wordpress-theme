@@ -1,0 +1,24 @@
+.dfsi {
+  .sidebar {
+    padding: 40px 0;
+
+    .widgettitle {
+      color: $fb-aqua;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .widget {
+      border-top: 10px solid $lighter-gray;
+      padding-top: 30px;
+      margin-bottom: 70px;
+
+      a {
+        font-size: 18px;
+        color: $black;
+      }
+
+    }
+  }
+}

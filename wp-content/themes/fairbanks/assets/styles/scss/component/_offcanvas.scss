@@ -1,0 +1,19 @@
+.dfsi {
+  .off-canvas {
+    background: $fb-aqua-og;
+    padding-top: 60px;
+
+    .menu {
+      &.is-accordion-submenu {
+        background: $fb-aqua-shade;
+      }
+    }
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-family: $tk-futura-pt-bold;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.dfsi {
+  .breadcrumb {
+    text-transform: capitalize;
+    padding: 40px 0;
+    font-size: 16px;
+    color: $medium-gray;
+
+    a {
+      color: $medium-gray;
+    }
+  }
+
+  &.page,
+  &.single,
+  &.error404,
+  &.search,
+  &.archive {
+
+    .content {
+      background: $white;
+    }
+
+    .inner-content {
+      padding-bottom: 40px;
+    }
+
+    .hentery {
+      color: $light-gray;
+      font-size: 16px;
+    }
+  }
+
+  &.archive,
+  &.search {
+    .post {
+      color: $fb-gray;
+      font-size: 18px;
+
+      .article-header {
+        a {
+          color: $black;
+          font-family: $header-font-family;
+          font-weight: 500;
+        }
+      }
+
+      .button {
+        font-size: 22px;
+        font-weight: 500;
+        color: $fb-aqua;
+        border: none;
+        padding: 0;
+
+        &:after {
+          display: inline-flex;
+          content: '>>>';
+          vertical-align: middle;
+          margin-left: 2px;
+
+        }
+      }
+    }
+  }
+}

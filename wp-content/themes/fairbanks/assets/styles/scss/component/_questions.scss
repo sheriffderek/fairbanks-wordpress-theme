@@ -1,0 +1,74 @@
+.dfsi {
+  &.home {
+    //set the width only on the homepage
+    .questions {
+      .accordion {
+        @include breakpoint(large) {
+          width: rem-calc(980);
+        }
+      }
+    }
+  }
+
+  .questions {
+    background: $white;
+    color: $black;
+    font-family: "futura-pt-bold", sans-serif;
+
+    .accordion {
+      width: 100%;
+      margin: 0 auto;
+      border: none;
+      padding: 0 rem-calc(20);
+
+      @include breakpoint(large) {
+        padding: 0 0 rem-calc(140) 0;
+      }
+    }
+
+    a {
+      font-size: rem-calc(18);
+      color: $black;
+
+      @include breakpoint(large) {
+        font-size: rem-calc(32);
+      }
+
+      &.accordion-title {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        border: none;
+
+        &::before {
+          color: $fb-gray2;
+          font-size: rem-calc(40);
+          top: 30%;
+          align-self: center;
+          position: relative;
+
+          @include breakpoint(large) {
+            font-size: inherit;
+            top: inherit;
+          }
+        }
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .accordion-item {
+      padding-bottom: rem-calc(60);
+
+      @include breakpoint(large) {
+      }
+    }
+
+    .accordion-content {
+      border: none;
+      color: $fb-gray;
+    }
+  }
+}
