@@ -66,3 +66,44 @@ $tk-futura-pt-bold: "futura-pt-bold", sans-serif;
 
 $primary-font: "futura-pt", sans-serif;
 $secondary-font: "futura-pt-bold", sans-serif;
+
+
+@mixin standard-voice() { // the standard readable type-pattern
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+}
+
+@mixin micro-copy() { // in the name
+  font-family: $primary-font;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .03em;
+}
+
+@mixin medium-voice() {
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 24px;
+  }
+  @media (min-width: 800px) {
+    font-size: 28px;
+  }
+}
+
+@mixin loud-voice() {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 32px;
+  }
+  @media (min-width: 800px) {
+    font-size: 46px;
+  }
+}
