@@ -1,9 +1,9 @@
 <?php
 // If outside the loop.
-$image = get_field('text');
-echo '<pre>';
-var_dump($image);
-echo '</pre>';
+// $image = get_field('text');
+// echo '<pre>';
+// var_dump($image);
+// echo '</pre>';
 
 if (isset($image)) : ?>
   <section class="masthead" style="background-image:url(<?php echo $image ?>)">
