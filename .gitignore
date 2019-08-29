@@ -26,3 +26,6 @@
 
 !/wp-content/themes/fairbanks
 node_modules
+
+
+/.DS_Store

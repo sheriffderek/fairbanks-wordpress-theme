@@ -1556,8 +1556,8 @@ input.sa_slide_popup_imagetitle:-ms-input-placeholder { color:#c0c0c0 !important
 	font-weight:400 !important;
 	font-size:16px !important;
 	line-height:16px !important;
-	background-color:#00519c !important;
 	color:#ffffff !important;
+	background-color:#00519c !important;
 	border-style:none !important;
 	border-radius:5px !important;
 	outline-color:transparent !important;
@@ -1568,7 +1568,16 @@ input.sa_slide_popup_imagetitle:-ms-input-placeholder { color:#c0c0c0 !important
 	-moz-transition:all 0.3s ease-in-out;
 	-o-transition:all 0.3s ease-in-out;
 }
-#sa_reorder_slides input[type=submit]:hover {
+#sa_reorder_slides #sar_update_but {
+	background-color:#00519c !important;
+}
+#sa_reorder_slides #sar_delete_but {
+	display:none;
+	background-color:crimson !important;
+}
+#sa_reorder_slides input[type=submit]:hover,
+#sa_reorder_slides #sar_update_but:hover,
+#sa_reorder_slides #sar_delete_but:hover {
 	background-color:#000000 !important;
 }
 #sa_reorder_slides  #sar_no_sliders_found {
@@ -1616,6 +1625,7 @@ input.sa_slide_popup_imagetitle:-ms-input-placeholder { color:#c0c0c0 !important
 	box-sizing:border-box !important;
 }
 #sa_reorder_slides #sar_sortable li {
+	position:relative !important;
 	width:100% !important;
 	clear:both !important;
 	margin:0px 0px 5px !important;
@@ -1662,6 +1672,22 @@ input.sa_slide_popup_imagetitle:-ms-input-placeholder { color:#c0c0c0 !important
 	line-height:16px !important;
 	color:#000000 !important;
 }
+#sa_reorder_slides #sar_sortable li .sar_content .sar_del_slide {
+	position:absolute !important;
+	top:10px !important;
+	right:10px !important;
+	font-weight:700 !important;
+	font-size:13px !important;
+	line-height:100% !important;
+	color:crimson !important;
+}
+#sa_reorder_slides #sar_sortable li .sar_content .sar_del_slide input[type=checkbox] {
+	margin-left:10px !important;
+	width:16px !important;
+	height:16px !important;
+	border-color:crimson !important;
+	background-color:#ffffff !important;
+}
 #sa_reorder_slides #sar_sortable li .sar_content .sar_slide_html {
 	height:96px !important;
 	padding:8px !important;
@@ -1700,4 +1726,15 @@ input.sa_slide_popup_imagetitle:-ms-input-placeholder { color:#c0c0c0 !important
 }
 #sa_reorder_slides .sar_back_button:hover {
 	background-color:#000000 !important;
+}
+@media only screen and (max-width:479px) {
+	#sa_reorder_slides > h1 { font-size:20px !important; line-height:26px !important; }
+	#sa_reorder_slides #sar_slider_form div select { 
+		max-width:320px !important; font-size:16px !important; line-height:38px !important;
+		height:38px !important; }
+	#sa_reorder_slides input[type=submit] {
+		padding:10px 16px !important; font-size:14px !important; line-height:14px !important; }
+	#sa_reorder_slides #sar_slider_title { font-size:18px !important; line-height:26px !important; }
+	#sa_reorder_slides #sar_drag_message { font-size:16px !important; line-height:22px !important; }
+	#sa_reorder_slides #sar_sortable li .sar_content .sar_del_slide span { display:none !important; }
 }

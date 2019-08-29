@@ -670,7 +670,13 @@ jQuery(function() {
 		}
 	});
 	
-	// ##### JQUERY-UI SORTABLE - RE-ORDER SLIDES SUB-PAGE #####
+	
+	
+	// ################################
+	// ##### RE-ORDER SLIDES PAGE #####
+	// ################################
+	
+	// ##### RE-ORDER SLIDES PAGE - JQUERY-UI SORTABLE ELEMENT #####
 	jQuery("#sar_sortable").sortable({
 		placeholder: 'ui-state-highlight',
 		cursor: 'move',
@@ -682,6 +688,43 @@ jQuery(function() {
 		}
 	});
 	jQuery("#sar_sortable" ).disableSelection();
+	
+	// ##### RE-ORDER SLIDES PAGE - A 'DELETE SLIDE' CHECKBOX HAS BEEN CLICKED #####
+	jQuery('.sar_del_checkbox').click(function(event) {
+		var clicked_id = event.target.id;
+		var del_list = '';
+		
+		// loop thought all 'delete slide' checkboxes looking for ones that have been checked
+		jQuery('.sar_del_checkbox').each(function (index, value) {
+			var checkbox_id = jQuery(this).attr('id');
+			if (jQuery('#' + checkbox_id).is(":checked")) {
+				var slide_no = checkbox_id.replace("sar_del", "");
+				if (del_list != '') { del_list += ','; }
+				del_list += slide_no;
+			}
+		});
+		
+		// update the hidden 'delete slides' input box in the form
+		document.getElementById("sar_del_slides").value = del_list;
+		
+		if (del_list == '') {
+			document.getElementById("sar_delete_but").style.display = 'none';
+			document.getElementById("sar_update_but").style.display = 'inline-block';
+		} else {	
+			document.getElementById("sar_delete_but").style.display = 'inline-block';
+			document.getElementById("sar_update_but").style.display = 'none';
+		}
+	});
+	
+	// ##### RE-ORDER SLIDES PAGE - 'UPDATE ORDER' BUTTON CLICKED #####
+	jQuery('#sar_update_but').click(function(event) {
+		document.getElementById("sar_del_slides").value = '';
+	});
+	
+	// ##### RE-ORDER SLIDES PAGE - 'DELETE SLIDES' BUTTON CLICKED #####
+	jQuery('#sar_delete_but').click(function(event) {
+		document.getElementById("sar_sort_order").value = '';
+	});
 })
 
 
