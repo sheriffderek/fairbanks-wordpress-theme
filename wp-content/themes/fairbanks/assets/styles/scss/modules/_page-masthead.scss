@@ -5,8 +5,7 @@
   //
   background-size: cover;
   background-position: bottom center; // $todo - we can finesse this
-  min-height: 500px; // $todo - determine the height of the intro with JS and add padding?
-  height: 80vh;
+  min-height: 300px; // $todo - determine the height of the intro with JS and add padding?
   max-height: 800px;
   .page-title {
     padding-top: $pad*4;
@@ -46,7 +45,11 @@
   }
   .inner-column {
     padding-top: $pad;
-    padding-bottom: $pad*10;
-    min-height: 50vh;
+  }
+  &.complex {
+    height: 80vh;
+    .inner-column {
+      padding-bottom: $pad*10;
+    }
   }
 }

@@ -14,6 +14,8 @@ get_header(); ?>
 
   <?php include 'modules/page-masthead.php'; ?>
 
+  <?php include 'modules/standard-page-content.php'; ?>  
+
 <?php } ?>
 
 
