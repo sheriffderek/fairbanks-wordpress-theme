@@ -8,8 +8,7 @@
   if ($masthead['alternate_page_title'] != '') {
     $pageTitle = $masthead['alternate_page_title'];
   } else {
-    $pageTitle = the_title(); // normal page title
-    // $todo - not falling back as expected - might not be in the loop
+    $pageTitle = get_the_title();
   }
   if ($mastheadImage) {
     $backgroundStyles = "background-image: url(" . $mastheadImage . ");";
