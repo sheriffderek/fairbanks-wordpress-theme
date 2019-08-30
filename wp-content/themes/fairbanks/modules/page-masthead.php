@@ -33,9 +33,7 @@
     <section class="introduction">
     <div class="constraint">
 
-      <div class="bread-crumbs">
-        <?php get_breadcrumb(); ?>
-      </div>
+      <?php include 'components/bread-crumbs.php'; ?>
 
       <div class="subheading">Heading of some sort here</div>
 
