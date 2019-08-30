@@ -14,7 +14,7 @@
   <section class="entry-content" itemprop="text">
     <?php the_content(); ?>
   </section> <!-- end article section -->
-  <?php get_template_part('parts/content', 'dropdown'); ?>
+  <?php // get_template_part('parts/content', 'dropdown'); ?>
   <footer class="article-footer">
     <?php wp_link_pages(); ?>
   </footer> <!-- end article footer -->
