@@ -7,6 +7,7 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
+        </main>
 					
 				<footer class="footer" role="contentinfo">
           <div class="grid-x align-justify">

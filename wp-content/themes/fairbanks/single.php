@@ -28,9 +28,8 @@ get_header(); ?>
 
         <section class="page-section team-member-detail">
         <div class="inner-column">
-          
-          <article>
 
+          <article>
 
             <div class="portrait">
               <figure class="image head-shot">
@@ -56,11 +55,24 @@ get_header(); ?>
         </div>
         </section>
 
+
+        <?php include 'modules/components/faq-list.php'; ?>
+
       <?php } // end team-member-detail ?>
 
 
 
+      <?php if ( is_singular('service') ) { ?>
 
+        <?php // get data
+          $teaser = get_field('teaser');
+          $title = get_the_title();
+          $symbol = "https://placehold.it/200";
+        ?>
+
+        <?=$title?>
+
+      <?php } // end team-member-detail ?>
 
 
 

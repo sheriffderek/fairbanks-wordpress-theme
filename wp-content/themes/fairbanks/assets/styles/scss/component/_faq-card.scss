@@ -1,0 +1,32 @@
+
+.faq-card {
+  //
+  .question {
+    @include medium-voice();
+    padding: $pad 0;
+    cursor: pointer;
+    // could - technically be a button... 
+    user-select: none; // stop click from selecting the text
+  }
+  .answer {
+    height: 0;
+    padding: 0;
+    @include standard-voice();
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+  &.open {
+    .question {
+      user-select: text;
+    }
+    .answer {
+      height: auto;
+      padding: $pad 0;
+      margin-bottom: $pad*2;
+    }
+  }
+}

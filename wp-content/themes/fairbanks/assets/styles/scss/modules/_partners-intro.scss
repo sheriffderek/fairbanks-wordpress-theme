@@ -1,0 +1,22 @@
+
+.partners-intro {
+  background-color: $gray-light;
+  .inner-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    min-width: 120px;
+    flex-basis: 50%;
+    max-width: 200px;
+    padding: $pad*2;
+  }
+  @media (min-width: 600px) {
+    .logo {
+      flex-basis: 25%;
+    }
+  }
+}

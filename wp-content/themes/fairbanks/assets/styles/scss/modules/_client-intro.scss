@@ -1,0 +1,57 @@
+
+.clients-intro {
+  background-color: $color;
+  color: $white;
+  .inner-column {
+    padding-top: $pad*4;
+    padding-bottom: $pad*4;
+  }
+  decorative-image {
+    width: 70%;
+    max-width: 300px;
+    @include circle-style();
+  }
+  copy-group {
+    //
+  }
+  .heading {
+    @include chill-voice();
+    color: $black;
+  }
+  .quote {
+    margin-top: $pad*2;
+    @include strong-voice();
+  }
+  .source {
+    margin-top: $pad;
+    @include standard-voice();
+    font-style: italic;
+  }
+  .message {
+    margin-top: $pad*2;
+    @include standard-voice();
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+  @media (max-width: 599px) {
+    copy-group {
+      margin-top: $pad*2;
+    }
+  }
+  @media (min-width: 600px) {
+    .inner-column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    copy-group {
+      flex-basis: 100%;
+    }
+    decorative-image {
+      order: 2;
+      margin-left: $pad*4;
+    }
+  }
+}
