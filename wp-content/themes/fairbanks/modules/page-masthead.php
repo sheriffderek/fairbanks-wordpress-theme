@@ -27,7 +27,9 @@
     <section class="introduction">
     <div class="constraint">
 
-      <div class="bread">Are there bread crumbs here?</div>
+      <div class="bread-crumbs">
+        <?php get_breadcrumb(); ?>
+      </div>
 
       <div class="subheading">Heading of some sort here</div>
 

@@ -25,6 +25,14 @@ get_template_part('parts/content', 'masthead')
 
 
 
+<?php if ( is_page('testimonials') ) { ?>
+
+  <?php include 'modules/page-masthead.php'; ?>
+
+<?php } ?>
+
+
+
 
 
 
