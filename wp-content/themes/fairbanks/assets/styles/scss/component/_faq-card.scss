@@ -2,11 +2,21 @@
 .faq-card {
   //
   .question {
+    position: relative;
     @include medium-voice();
     padding: $pad 0;
     cursor: pointer;
     // could - technically be a button... 
     user-select: none; // stop click from selecting the text
+    .icon {
+      position: absolute;
+      top: $pad;
+      right: 0;
+      //
+      // width: 20px;
+      // height: 20px;
+      color: $gray-light;
+    }
   }
   .answer {
     height: 0;
@@ -21,7 +31,10 @@
   }
   &.open {
     .question {
-      user-select: text;
+      // user-select: text;
+      .icon {
+        // background: $gray;
+      }
     }
     .answer {
       height: auto;
@@ -29,4 +42,6 @@
       margin-bottom: $pad*2;
     }
   }
+
+  border-bottom: 4px dotted $gray-light;
 }

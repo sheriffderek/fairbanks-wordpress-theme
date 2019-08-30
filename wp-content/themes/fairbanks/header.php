@@ -36,8 +36,10 @@
 
  </head>
 
- <body <?php body_class('dfsi'); ?>>
+ <body <?php body_class('dfsi site'); ?>>
 
+
+  <?php // this off canvas stuff is messing up the flow of the document... - and gets in the way of some basic structure like - https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ - $todo ?>
    <div class="off-canvas-wrapper">
 
      <!-- Load off-canvas container. Feel free to remove if not using. -->

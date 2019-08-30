@@ -2,6 +2,8 @@
 <aside class="faq-card">
   <h2 class="question" rel="faq-toggle-thing">
     <?=$question?>
+
+    <div class='icon'>+</div>
   </h2>
 
   <rich-text-content class="answer">

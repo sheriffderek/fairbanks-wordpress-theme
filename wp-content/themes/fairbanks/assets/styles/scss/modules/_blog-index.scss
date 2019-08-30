@@ -1,0 +1,29 @@
+
+.blog-stuffs {
+  // border: 1px solid red;
+  .inner-column {
+    padding-bottom: $pad*6;
+  }
+  .primary-content {
+    // border: 1px solid blue;
+  }
+  .alternate-content {
+    // border: 1px solid orange;
+  }
+
+  @media (min-width: 1000px) {
+    .inner-column {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .primary-content {
+      flex-basis: 100%;
+    }
+    .alternate-content {
+      width: 100%;
+      max-width: 300px;
+      margin-left: $pad*3;
+    }
+  }
+}

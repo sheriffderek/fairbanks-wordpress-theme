@@ -161,6 +161,17 @@ copy-group {
 
 
 // $structure
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
 .page-section {
   .inner-column {
     width: 98%;
@@ -201,6 +212,7 @@ copy-group {
 @import "component/team-member-card";
 @import "component/service-card";
 @import "component/bread-crumbs";
+@import "component/contextual-sidebar";
 
 
 
@@ -212,9 +224,10 @@ copy-group {
 @import "modules/client-intro";
 @import "modules/partners-intro";
 @import "modules/why-us-intro";
-
 @import "modules/team-members";
 @import "modules/team-member-detail";
+
+@import "modules/blog-index";
 
 
 //// $pages
