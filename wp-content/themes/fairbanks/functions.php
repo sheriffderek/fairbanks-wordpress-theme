@@ -46,3 +46,6 @@ require_once(get_template_directory() . '/functions/custom-post-type.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+
+add_filter('show_admin_bar', '__return_false');
