@@ -61,5 +61,81 @@
   font-family: "futura-pt-bold", sans-serif;
 }
 
-$tk-futura-pt-bold: "futura-pt-bold",
-sans-serif;
+$tk-futura-pt-bold: "futura-pt-bold", sans-serif;
+
+
+$primary-font: "futura-pt", sans-serif;
+$secondary-font: "futura-pt-bold", sans-serif;
+
+@mixin micro-copy() { // in the name
+  font-family: $primary-font;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .03em;
+}
+
+@mixin standard-voice() { // the standard readable type-pattern
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+}
+
+@mixin strong-voice() { // the standard readable type-pattern
+  font-family: $secondary-font;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+}
+
+@mixin medium-voice() {
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 24px;
+  }
+  @media (min-width: 800px) {
+    font-size: 32px; // checked
+  }
+}
+
+@mixin loud-voice() {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 32px;
+  }
+  @media (min-width: 800px) {
+    font-size: 70px;
+  }
+}
+
+@mixin chill-voice() {
+  font-family: $primary-font;
+  font-size: 23px;
+  line-height: 1.1;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 50px;
+  }
+  @media (min-width: 800px) {
+    font-size: 60px;
+  }
+}
+
+@mixin extra-loud-voice() { // in landing splash
+  font-family: $secondary-font;
+  font-size: 8vw; // arbitrary to current text - $shame
+  line-height: 1;
+  letter-spacing: .03em;
+  @media (min-width: 500px) {
+    font-size: 70px;
+  }
+  @media (min-width: 800px) {
+    font-size: 104px;
+  }
+}

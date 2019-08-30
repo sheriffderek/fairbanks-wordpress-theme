@@ -53,3 +53,6 @@
          <?php get_template_part('parts/nav', 'title-bar'); ?>
 
        </header> <!-- end .header -->
+      
+
+      <main class='page-content'>

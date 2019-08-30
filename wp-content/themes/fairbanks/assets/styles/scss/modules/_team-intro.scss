@@ -1,0 +1,35 @@
+
+.team-intro {
+  background-color: $gray;
+  color: $white;
+  //
+  background-image: url(https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80); // $temp - $todo
+  .inner-column {
+    padding-top: $pad*6;
+    padding-bottom: $pad*6;
+  }
+  copy-group {
+    //
+  }
+  .heading {
+    @include chill-voice();
+    color: $black;
+  }
+  .quote {
+    margin-top: $pad*2;
+    @include strong-voice();
+  }
+  .source {
+    margin-top: $pad;
+    @include standard-voice();
+    font-style: italic;
+  }
+  .message {
+    margin-top: $pad*2;
+    @include standard-voice();
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+}

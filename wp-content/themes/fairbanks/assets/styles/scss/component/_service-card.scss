@@ -1,0 +1,24 @@
+
+.service-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  .title {
+    @include strong-voice();
+    text-transform: uppercase;
+    color: $color;
+  }
+  .teaser {
+    @include standard-voice();
+    margin-top: $pad*1;
+  }
+  decorative-image {
+    max-width: 100px;
+    @include circle-style();
+    flex-shrink: 0;
+    margin-right: $pad*2;
+  }
+  copy-group {
+    //
+  }
+}

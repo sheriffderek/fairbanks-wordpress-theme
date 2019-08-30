@@ -1,0 +1,52 @@
+
+.page-masthead {
+  position: relative; // for overlay
+  color: white;
+  //
+  background-size: cover;
+  background-position: bottom center; // $todo - we can finesse this
+  min-height: 500px; // $todo - determine the height of the intro with JS and add padding?
+  height: 80vh;
+  max-height: 800px;
+  .page-title {
+    padding-top: $pad*4;
+    padding-bottom: $pad*4;
+    @include loud-voice();
+  }
+  .introduction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    //
+    background: rgba(0,0,0,.6); // $todo - should be a setting
+    padding: $pad;
+    @include standard-voice();
+    .bread {
+      //
+    }
+    .subheading {
+      margin-top: $pad*2;
+      @include medium-voice();
+    }
+    .story {
+      margin-top: $pad*2;
+      p {
+        max-width: 840px; // paragraphs can't be too long... 
+      }
+    }
+    .constraint {
+      max-width: 1300px; // $temp
+      margin-right: auto;
+      margin-left: auto;
+      padding: $pad;
+      padding-top: $pad*3;
+      padding-bottom: $pad*3;
+    }
+  }
+  .inner-column {
+    padding-top: $pad;
+    padding-bottom: $pad*10;
+    min-height: 50vh;
+  }
+}

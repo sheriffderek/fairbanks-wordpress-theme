@@ -1,0 +1,48 @@
+
+.landing-splash {
+  background: $color;
+  background-image: url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80); // $temp - $todo
+  background-size: cover;
+  background-position: center center;
+  .inner-column {
+    text-align: center;
+  }
+  .stuff { // ".content" leaks out from other styles
+    padding-top: $pad*4;
+    padding-bottom: $pad*4;
+  }
+  .heading {
+    @include extra-loud-voice();
+    text-transform: uppercase;
+    color: $color;
+    padding: $pad*2 0;
+  }
+  .subheading {
+    @include chill-voice();
+    text-transform: uppercase;
+    color: $white;
+    .visually-hidden {
+      display: none; // $todo
+    }
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+  @media (min-width: 600px) {
+    .stuff {
+      padding-top: $pad*8;
+      padding-bottom: $pad*8;
+    }
+  }
+  @media (min-width: 900px) {
+    .inner-column {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+// note - might need some 'overlay' alpha block to help read the text

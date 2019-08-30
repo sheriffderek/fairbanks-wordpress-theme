@@ -28,9 +28,9 @@ CSS file.
 @include foundation-xy-grid-classes;
 
 @include foundation-flex-classes;
-@include foundation-typography;
+// @include foundation-typography;
 @include foundation-forms;
-@include foundation-button;
+// @include foundation-button;
 @include foundation-accordion;
 @include foundation-accordion-menu;
 @include foundation-badge;
@@ -68,6 +68,7 @@ CSS file.
 @import "global/global";
 @import "global/type";
 @import "global/single-page";
+
 @import "component/date";
 @import "component/sidebar";
 @import "component/navigation";
@@ -79,3 +80,146 @@ CSS file.
 @import "component/clients";
 @import "component/team";
 @import "component/footer";
+
+
+
+//// $temporary - just dropping a few things here - until i sort out what parts of foundation are fighting me
+.thing {
+  //
+}
+
+//// $reset
+@import "resets/meyer-reset";
+
+
+//// $global
+// @import "global/type-patterns";
+
+// $structure
+$pad: 10px;
+$standard-column-width: 1260px;
+$tight-column-width: 1000px;
+
+// $colors
+$black: black;
+$white: white;
+$color: #00b2b2;
+$highlight: #3e89d1;
+$highlight-dark: #13212b;
+$gray: gray;
+$gray-light: #f4f4f4;
+
+@mixin button-standard() {
+  display: inline-block;
+  padding: $pad*1.2 $pad*2; // just going on feel
+  background: $highlight;
+  color: white;
+  min-width: 220px;
+  text-align: center;
+  width: auto; // for flex parent issues
+  @include strong-voice();
+  text-transform: uppercase;
+  //
+  * { // for headings in links
+    color: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+}
+
+@mixin circle-style() {
+  display: block; // just in case...
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+// $basics // custom elements
+decorative-image {
+  display: block;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+copy-group {
+  display: block;
+}
+
+
+
+.page-content {
+  background: white;
+}
+
+
+// $structure
+.page-section {
+  .inner-column {
+    width: 98%;
+    max-width: $standard-column-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding: $pad;
+  }
+  a {
+    display: block; // $temp - hiding it in here / so we don't break the rest
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+  }
+  @media (min-width: 400px) {
+    .inner-column {
+      width: 96%;
+    }
+  }
+
+  rich-text-content, .rich-text-content {
+    display: block;
+    p { // $temp - hiding it in here / so we don't break the rest
+      & + p {
+        margin-top: $pad;
+      }
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+//// $components
+@import "component/faq-list";
+@import "component/faq-card";
+@import "component/team-member-card";
+@import "component/service-card";
+
+
+
+//// $modules
+@import "modules/page-masthead";
+@import "modules/landing-splash";
+@import "modules/team-intro";
+@import "modules/services-intro";
+@import "modules/client-intro";
+@import "modules/partners-intro";
+@import "modules/why-us-intro";
+
+@import "modules/team-members";
+@import "modules/team-member-detail";
+
+
+//// $pages
+// @import "pages/our-team";
+
+
+//// $utilities
+// @import "utilities/a11y";
+

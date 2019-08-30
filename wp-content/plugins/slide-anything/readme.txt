@@ -3,7 +3,7 @@ Contributors: simonpedge
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RP7JLGK6VT252
 Tags: slider, carousel, content slider, responsive slider, html slider, owl carousel
 Requires at least: 4.0
-Tested up to: 5.2
+Tested up to: 5.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -314,6 +314,9 @@ Adding a SLIDE ANYTHING slider using the WordPress 5.0 'Block Editor' is pretty 
 = 2.3.6 =
 * Added the 'Show 1 Dot Per Slide' checkbox option which when checked displays 1 pagination dot per slide (instead of 1 pagination dot per page of slides)
 
+= 2.3.7 =
+* Added the option to bulk delete slides within the 'Re-Order Slides' page
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -530,3 +533,6 @@ Adding a SLIDE ANYTHING slider using the WordPress 5.0 'Block Editor' is pretty 
 
 = 2.3.6 =
 * Added the 'Show 1 Dot Per Slide' checkbox option which when checked displays 1 pagination dot per slide (instead of 1 pagination dot per page of slides)
+
+= 2.3.7 =
+* Added the option to bulk delete slides within the 'Re-Order Slides' page

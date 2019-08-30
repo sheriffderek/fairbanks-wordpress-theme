@@ -1,0 +1,30 @@
+
+.services-intro {
+  //
+  .inner-column {
+    max-width: $tight-column-width;
+  }
+  .section-heading {
+    @include loud-voice();
+    text-align: center;
+  }
+  .section-subheading {
+    @include standard-voice();
+    text-align: center;
+  }
+  .service-list {
+    margin-top: $pad*4;
+    .service-card {
+      margin-bottom: $pad*2
+    }
+    @media (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .link {
+        flex-basis: 48%;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+
+.team-members {
+  background-color: white;
+  .team-member {
+    .inner-column {
+      padding-top: $pad*6;
+      padding-bottom: $pad*6;
+    }
+  }
+  @media (min-width: 700px) {
+    .team-member {
+      .inner-column {
+        padding-top: $pad*10;
+        padding-bottom: $pad*10;
+      }
+      &:nth-of-type(even) {
+        .team-member-card {
+          .portrait {
+            order: 0;
+          }
+        }
+      }
+    }
+  }
+}

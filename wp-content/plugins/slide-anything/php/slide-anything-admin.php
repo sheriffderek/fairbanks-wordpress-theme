@@ -2673,7 +2673,7 @@ function sa_reorder_slides_page() {
 		$slider_title = get_the_title($slider_id);
 		
 		if (isset($_POST['sar_sort_order']) && ($_POST['sar_sort_order'] != '')) {
-			// CHANGE THE ORDER OF SLIDE DATA FOR THE SLIDER AND RE-SAVE METADATA
+			// ### CHANGE THE ORDER OF SLIDE DATA FOR THE SLIDER AND RE-SAVE METADATA ###
 			$sort_order = $_POST['sar_sort_order'];
 			$data_in_arr = array();
 			$data_out_arr = array();
@@ -2684,7 +2684,7 @@ function sa_reorder_slides_page() {
 			foreach ($metadata as $key => $value_arr) {
 				$value = $value_arr[0];
 				for ($i = 1; $i <= $num_slides; $i++) {
-					$key_prefix = "sa_slide".$i;
+					$key_prefix = "sa_slide".$i."_";
 					if (strpos($key, $key_prefix) === 0) {
 						// metadata key starts with the key prefix ('sa_slide??')
 						$data_in_arr[$key] = $value;
@@ -2695,8 +2695,8 @@ function sa_reorder_slides_page() {
 			// 2) CREATE THE NEW SLIDES 'OUT' ARRAY (WITH THE NEW SLIDE ORDER)
 			$sort_order_arr = explode(",", $sort_order);
 			for ($i = 0; $i < count($sort_order_arr); $i++) {
-				$loop_prefix = "sa_slide".($i+1); // ascending loop order (1, 2, 3...)
-				$order_prefix = "sa_slide".$sort_order_arr[$i]; // slide number to be stored in this slot
+				$loop_prefix = "sa_slide".($i+1)."_"; // ascending loop order (1, 2, 3...)
+				$order_prefix = "sa_slide".$sort_order_arr[$i]."_"; // slide number to be stored in this slot
 				foreach ($data_in_arr as $key => $value) {
 					if (strpos($key, $order_prefix) === 0) {
 						// metakey key value starts with the order prefix
@@ -2712,6 +2712,64 @@ function sa_reorder_slides_page() {
 			}
 			
 			echo "<h3 id='sar_success_message'>SLIDE ORDER HAS BEEN UPDATED</h3>";
+		} else {
+			if (isset($_POST['sar_del_slides']) && ($_POST['sar_del_slides'] != '')) {
+				// ### DELETE ALL SLIDES WITH THE 'DELETE SLIDE' CHECKBOX CHECKED ###
+				$del_slides = $_POST['sar_del_slides'];
+				$del_slides_arr = explode(",", $del_slides);
+				$data_in_arr = array();
+				$data_out_arr = array();
+				
+				// 1) SAVE SLIDES METADATA TO AN 'IN' ARRAY (ONLY SLIDES MEATDATA AND NO SETTINGS DATA SAVED!)
+				$metadata = get_metadata('post', $slider_id);
+				$num_slides = $metadata['sa_num_slides'][0];
+				foreach ($metadata as $key => $value_arr) {
+					$value = $value_arr[0];
+					for ($i = 1; $i <= $num_slides; $i++) {
+						$key_prefix = "sa_slide".$i."_";
+						if (strpos($key, $key_prefix) === 0) {
+							// metadata key starts with the key prefix ('sa_slide??')
+							$data_in_arr[$i][$key] = $value;
+						}
+					}
+				}
+				
+				// 2) CREATE THE NEW SLIDES 'OUT' ARRAY (WITH THE DELETED SLIDES REMOVED)
+				$curr_index = 0;
+				$tot_del = 0;
+				for ($i = 1; $i <= $num_slides; $i++) {
+					$loop_prefix = "sa_slide".$i."_";
+					$delete_yn = 0;
+					for ($j = 0; $j < count($del_slides_arr); $j++) {
+						if ($i == $del_slides_arr[$j]) {
+							$delete_yn = 1;
+						}
+					}
+					if ($delete_yn == 0) {
+						// current slide is NOT to be deleted - copy to 'out' array
+						$curr_index++;
+						$curr_prefix = "sa_slide".$curr_index."_";
+						foreach ($data_in_arr[$i] as $key => $value) {
+							$new_key = str_replace($loop_prefix, $curr_prefix, $key);
+							$data_out_arr[$new_key] = $value;
+						}
+					} else {
+						$tot_del++;
+					}
+				}
+				
+				// 3) LOOP THROUGH SLIDES 'OUT' ARRAY UPDATING POST METADATA
+				update_post_meta($slider_id, 'sa_num_slides', $curr_index);
+				foreach ($data_out_arr as $key => $value) {
+					update_post_meta($slider_id, $key, $value);
+				}
+				
+				if ($tot_del == 1) {
+					echo "<h3 id='sar_success_message'>".$tot_del." SLIDE HAS BEEN DELETED</h3>";
+				} else {
+					echo "<h3 id='sar_success_message'>".$tot_del." SLIDES HAVE BEEN DELETED</h3>";
+				}
+			}
 		}
 		
 		// GET REQUIRED SLIDER METADATA AND SAVE WITHIN AN ARRAY
@@ -2752,6 +2810,9 @@ function sa_reorder_slides_page() {
 				echo "<div class='sar_image' style='background-image:url(\"".$bg_image."\");'></div>\n";
 				echo "<div class='sar_content'>\n";
 				echo "<h4 class='sar_slide_num'>SLIDE ".$i."</h4>\n";
+				echo "<div class='sar_del_slide'>DELETE <span>SLIDE</span>";
+				echo "<input type='checkbox' id='sar_del".$i."' name='sar_del".$i."' class='sar_del_checkbox'/>";
+				echo "</div>\n";
 				echo "<div class='sar_slide_html'>".nl2br(htmlentities($slide_arr[$i]['content']))."</div>\n";
 				echo "</div>";
 				echo "</li>\n";
@@ -2762,7 +2823,9 @@ function sa_reorder_slides_page() {
 			echo "<form method='post' id='sar_order_form'>\n";
 			echo "<input type='hidden' name='sar_slider_id' value='".$slider_id."'/>";
 			echo "<input type='hidden' id='sar_sort_order' name='sar_sort_order'/>";
-			echo "<input type='submit' value='UPDATE SLIDER'/>";
+			echo "<input type='hidden' id='sar_del_slides' name='sar_del_slides'/>";
+			echo "<input type='submit' id='sar_update_but' value='UPDATE ORDER'/>";
+			echo "<input type='submit' id='sar_delete_but' value='DELETE SLIDES'/>";
 			echo "</form>\n";
 			
 		} else {
@@ -2806,7 +2869,7 @@ function sa_reorder_slides_page() {
 				echo "<option value='".$slider_arr[$i]['id']."'>".$slider_arr[$i]['title']." (#".$slider_arr[$i]['id'].")</option>\n";
 			}
 			echo "<select></div>\n";
-			echo "<div><input type='submit' value='Re-Order Slider'/></div>\n";
+			echo "<div><input type='submit' value='Select Slider'/></div>\n";
 			echo "</form>\n";
 		} else {
 			// NO SA SLIDERS FOUND - DISPLAY MESSAGE

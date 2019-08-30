@@ -23,10 +23,15 @@ $ npm run watch
 * Watches for changes in the `assets/images` directory. When a change is made the image files are optimized and saved over the original image.
 
 ### Watching for Changes with Browsersync
+
+Update the `const LOCAL_URL = "http://{{your local url}}";` variable in the `gulpfile.js` to your local install URL.
+
 ```bash
 $ npm run browsersync
 ```
-This will watch the same files as `npm run watch`, but utilizes browsersync for live reloading and style injection. Be sure to update the `URL` variable in the `gulpfile.js` to your local install URL. 
+This will watch the same files as `npm run watch`, but utilizes browsersync for live reloading and style injection.
+
+
 
 ## Compile and Minify All Theme Assets
 ```bash
