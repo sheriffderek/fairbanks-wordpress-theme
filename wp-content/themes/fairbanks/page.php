@@ -10,6 +10,15 @@ get_header(); ?>
 
 
 
+<?php if ( is_page('about-us') ) { ?>
+
+  <?php include 'modules/page-masthead.php'; ?>
+
+<?php } ?>
+
+
+
+
 <?php if ( is_page('our-team') ) { ?>
 
   <?php include 'modules/page-masthead.php'; ?>
@@ -44,6 +53,7 @@ get_header(); ?>
   </section>
 
 <?php } ?>
+
 
 
 <?php get_footer(); ?>
