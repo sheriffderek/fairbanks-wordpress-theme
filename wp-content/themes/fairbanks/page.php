@@ -6,12 +6,7 @@
  * This is the template that displays all pages by default.
  */
 
-get_header();
-
-get_template_part('parts/content', 'masthead')
-?>
-
-
+get_header(); ?>
 
 
 
@@ -25,6 +20,7 @@ get_template_part('parts/content', 'masthead')
 
 
 
+
 <?php if ( is_page('testimonials') ) { ?>
 
   <?php include 'modules/page-masthead.php'; ?>
@@ -34,28 +30,20 @@ get_template_part('parts/content', 'masthead')
 
 
 
+<?php if ( is_page('contact-us') ) { ?>
+
+  <?php include 'modules/page-masthead.php'; ?>
 
 
-<div class="content">
-  <div class="grid-container">
+  <section class="page-section how-to-contact-us">
+  <div class="inner-column">
 
-    <div class="inner-content grid-x grid-padding-x">
+    <?php echo do_shortcode( '[contact-form-7 id="208" title="Request a group quote"]' ); ?>
 
-      <main class="main small-12 large-8 medium-8 cell" role="main">
-        <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  </div>
+  </section>
 
-            <?php get_template_part('parts/loop', 'page'); ?>
+<?php } ?>
 
-          <?php endwhile;
-        endif; ?>
-
-      </main> <!-- end #main -->
-
-      <?php get_sidebar(); ?>
-    </div>
-  </div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
 
 <?php get_footer(); ?>
