@@ -151,4 +151,67 @@ get_header(); ?>
 
 
 
+  <?php if ( is_singular('post') ) { ?>
+
+
+    <header class="page-section page-header">
+    <div class="inner-column">
+
+      <?php
+        $pageTitle = get_the_title();
+        $teaser = get_field('teaser');
+      ?>
+
+      <h1 class="page-title"><?=$pageTitle?></h1>
+
+      <p class="teaser"><?=$teaser?></p>
+
+    </div>
+    </header>
+
+
+    <section class="page-section bread">
+    <div class="inner-column">
+      
+      <?php include('modules/components/bread-crumbs.php'); ?>
+
+    </div>
+    </section>
+
+
+    <section class="page-section standard-page-content two-column">
+    <div class="inner-column">
+
+      <main class="primary-content">
+
+        <article>
+          
+          <rich-text-content class="body">
+            <h2>Blog post content for <?php the_title(); ?> - will be here</h2>
+          </rich-text-content>
+
+        </article>
+
+        <?php include 'modules/components/faq-list.php'; ?>
+      </main>
+
+
+      <aside class="alternate-content">
+        <sticky-thing>
+          <?php // $todo... not sure why this isnt' working... https://codepen.io/sheriffderek/pen/GRKvGoq ?>
+          <?php include 'modules/components/contextual-sidebar.php'; ?>
+        </sticky-thing>
+      </aside>
+
+
+    </div>
+    </section>
+
+
+    <?php include 'modules/next-steps.php'; ?>
+
+  <?php } // end service-detail ?>
+
+
+
 <?php get_footer(); ?>

@@ -4,9 +4,9 @@
 
     <h1 class="section-heading">Insurance services</h1>
 
-    <p class="section-subheading">Intro text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est tempore eius.</p>
+    <p class="section-subheading">Intro text: Are these 'services' hand selected? There is a "featured" box you can check to show them here - for now.</p>
 
-    <ol class="service-list">
+    <ol class="service-intro-list">
 
       <?php
 

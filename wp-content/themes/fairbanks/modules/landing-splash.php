@@ -12,7 +12,7 @@
       Insurance Services Inc
     </h2>
 
-    <a class="button" href="" rel="">
+    <a class="button" href="http://www.fairbanks-ins.com/page.asp?type=ifp" target="quote">
       <h3>Request an insurance quote</h3>
     </a>
   </aside>
