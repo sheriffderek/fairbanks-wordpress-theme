@@ -6,16 +6,13 @@
     @include medium-voice();
     padding: $pad 0;
     cursor: pointer;
-    // could - technically be a button... 
-    user-select: none; // stop click from selecting the text
+    // $note - could(should) - technically be a button... 
+    user-select: none;
     padding-right: $pad*2;
     .icon {
       position: absolute;
       top: $pad;
       right: 0;
-      //
-      // width: 20px;
-      // height: 20px;
       color: $gray-light;
     }
   }
@@ -30,6 +27,13 @@
     @include button-standard();
     margin-top: $pad*2;
   }
+  &:not(.open) {
+    .answer {
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
   &.open {
     .question {
       // user-select: text;
@@ -43,6 +47,5 @@
       margin-bottom: $pad*2;
     }
   }
-
   border-bottom: 4px dotted $gray-light;
 }

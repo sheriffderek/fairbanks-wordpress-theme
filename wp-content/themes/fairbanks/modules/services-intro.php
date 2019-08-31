@@ -28,7 +28,8 @@
         <?php // get data
           $teaser = get_field('teaser');
           $title = get_the_title();
-          $symbol = "https://placehold.it/200";
+          $symbol = (get_field('symbol')['url'] != false ? get_field('symbol')['url'] : "https://placehold.it/200");
+          //           * this is kinda ugly... 
         ?>
 
         <a class="link" href='<?php echo get_the_permalink(); ?>'>

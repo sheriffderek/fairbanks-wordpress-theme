@@ -49,6 +49,19 @@ $breakpoint = "medium"; ?>
       </ul>
       <?php // joints_top_nav(); ?>
 
+
+          <nav class='main-menu'>
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location' => 'secondary',
+                'container' => false,
+              )
+            );
+          ?>
+          </nav>
+
+
     </div>
   </div>
 </div>

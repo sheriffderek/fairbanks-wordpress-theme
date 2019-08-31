@@ -49,7 +49,7 @@ get_header(); ?>
         </section>
 
 
-        <?php include 'modules/components/faq-list.php'; ?>
+        <?php include 'modules/faq-intro.php'; ?>
 
       <?php } // end team-member-detail ?>
 
