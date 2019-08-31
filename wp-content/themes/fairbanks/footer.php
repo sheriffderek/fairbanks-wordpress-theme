@@ -8,7 +8,34 @@
  */			
  ?>
         </main>
+
+
+
+        <!-- $temp - $todo / trying out this other menu -->
+        <section class="page-section page-name">
+        <div class="inner-column">
+          
+          <div class='message'>
+            Working something out here: 
+          </div>
+
+          <nav class='main-menu'>
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location' => 'primary',
+                'container' => false,
+              )
+            );
+          ?>
+          </nav>
+
+        </div>
+        </section>
+
+
 					
+
 				<footer class="footer" role="contentinfo">
           <div class="grid-x align-justify">
           <h5 class="tk-futura-pt-bold small-6 large-1 cell">sitemap</h5>

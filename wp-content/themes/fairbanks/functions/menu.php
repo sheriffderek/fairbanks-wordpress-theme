@@ -4,7 +4,8 @@ register_nav_menus(
   array(
     'main-nav'    => __('The Main Menu', 'jointswp'),    // Main nav in header
     'offcanvas-nav'  => __('The Off-Canvas Menu', 'jointswp'),  // Off-Canvas nav
-    'footer-links'  => __('Footer Links', 'jointswp')      // Secondary nav in footer
+    'footer-links'  => __('Footer Links', 'jointswp'),      // Secondary nav in footer
+    'primary' => "Main menu",
   )
 );
 

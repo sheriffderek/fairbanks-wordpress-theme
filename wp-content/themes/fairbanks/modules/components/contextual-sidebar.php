@@ -7,7 +7,7 @@
     </header>
 
     <main>
-      <p class="message">What do you really want people to be looking at right now? A list of catagories? Or something specific to this article / that will bring them one step closer to calling you?</p>
+      <p class="message">What do you really want people to be looking at right now? A list of catagories? Or something specific to this article that will bring them one step closer to calling you?</p>
     </main>
   </aside>
 

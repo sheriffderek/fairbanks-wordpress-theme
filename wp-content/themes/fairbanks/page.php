@@ -36,6 +36,19 @@ get_header(); ?>
 
   <?php include 'modules/page-masthead.php'; ?>
 
+  <?php include 'modules/testimonial-index.php'; ?>
+
+<?php } ?>
+
+
+
+
+<?php if ( is_page('service') ) { ?>
+
+  <?php include 'modules/page-masthead.php'; ?>
+
+  <?php include 'modules/testimonial-index.php'; ?>
+
 <?php } ?>
 
 

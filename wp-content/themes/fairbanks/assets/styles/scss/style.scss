@@ -88,6 +88,19 @@ CSS file.
   //
 }
 
+.main-menu {
+  //
+  // border: 2px solid orange;
+  .menu-item {
+    // border: 2px solid blue;
+  }
+  .menu-item-has-children {
+    display: block;
+    // border: 2px solid red;
+  }
+}
+
+
 //// $reset
 @import "resets/meyer-reset";
 
@@ -228,7 +241,28 @@ copy-group {
 @import "modules/team-member-detail";
 
 @import "modules/blog-index";
+@import "modules/service-index";
+// $temp
+.testimo {
+  padding: $pad*4 0;
+  .header {
+    @include medium-voice();
+  }
+  .source {
+    @include strong-voice();
+  }
+  .full {
+    margin-top: $pad;
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+}
 
+.big {
+  @include medium-voice();
+}
 
 //// $pages
 // @import "pages/our-team";

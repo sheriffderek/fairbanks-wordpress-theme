@@ -47,7 +47,8 @@ $breakpoint = "medium"; ?>
                                                   ?>/assets/images/account-icon.png"/></li>
           <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
       </ul>
-      <?php joints_top_nav(); ?>
+      <?php // joints_top_nav(); ?>
+
     </div>
   </div>
 </div>

@@ -8,6 +8,7 @@
     cursor: pointer;
     // could - technically be a button... 
     user-select: none; // stop click from selecting the text
+    padding-right: $pad*2;
     .icon {
       position: absolute;
       top: $pad;

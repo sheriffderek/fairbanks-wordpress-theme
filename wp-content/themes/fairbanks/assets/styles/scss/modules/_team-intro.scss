@@ -3,10 +3,22 @@
   background-color: $gray;
   color: $white;
   //
-  background-image: url(https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80); // $temp - $todo
+  // background-image: url(https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80); // $temp - $todo
+  background-image: url('../images/bg-team-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  @media (orientation: landscape) {
+    background-image:url('../images/bg-clients.jpg');
+  }
   .inner-column {
     padding-top: $pad*6;
     padding-bottom: $pad*6;
+    //
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   copy-group {
     //
@@ -31,5 +43,10 @@
   .button {
     @include button-standard();
     margin-top: $pad*2;
+  }
+  @media (min-width: 700px) {
+    .inner-column {
+      min-height: 70vh;
+    }
   }
 }

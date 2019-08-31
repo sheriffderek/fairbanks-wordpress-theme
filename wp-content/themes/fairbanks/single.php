@@ -6,13 +6,6 @@
 
 get_header(); ?>
 
-<div class="content">
-  <div class="grid-container">
-    <div class="inner-content grid-x  grid-padding-x">
-
-
-
-
 
 
       <?php if ( is_singular('team_members') ) { ?>
@@ -67,35 +60,28 @@ get_header(); ?>
         <?php // get data
           $teaser = get_field('teaser');
           $title = get_the_title();
-          $symbol = "https://placehold.it/200";
+          $fullArticle = get_field('full_article');
         ?>
 
-        <?=$title?>
 
-      <?php } // end team-member-detail ?>
+        <section class="page-section page-name">
+        <div class="inner-column">
+          
+          <h1 class="big"><?=$title?></h1>
+
+          <?php // include 'modules/standard-page-content.php'; ?>  
+
+          <rich-text-content>
+            <?=$fullArticle?>
+            <p>Then all the service info goes here...</p>
+          </rich-text-content>
+
+        </div>
+        </section>
+
+      <?php } // end service-detail ?>
 
 
 
-
-      <main class="main small-12 medium-8 large-8 cell" role="main">
-        <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-            <?php get_template_part('parts/loop', 'single'); ?>
-
-          <?php endwhile;
-        else : ?>
-
-          <?php get_template_part('parts/content', 'missing'); ?>
-
-        <?php endif; ?>
-
-      </main> <!-- end #main -->
-
-      <?php get_sidebar(); ?>
-
-    </div> <!-- end #inner-content -->
-  </div>
-</div> <!-- end #content -->
 
 <?php get_footer(); ?>

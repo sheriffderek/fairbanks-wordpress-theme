@@ -3,8 +3,8 @@
   background-color: $color;
   color: $white;
   .inner-column {
-    padding-top: $pad*4;
-    padding-bottom: $pad*4;
+    padding-top: $pad*8;
+    padding-bottom: $pad*8;
   }
   decorative-image {
     width: 70%;
@@ -45,6 +45,8 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      padding-top: $pad*12;
+      padding-bottom: $pad*12;
     }
     copy-group {
       flex-basis: 100%;

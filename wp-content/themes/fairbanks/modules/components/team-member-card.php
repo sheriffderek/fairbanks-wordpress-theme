@@ -2,9 +2,9 @@
 <aside class="team-member-card">
 
   <div class="portrait">
-    <figure class="image head-shot">
+    <decorative-image class="head-shot">
       <img src="<?=$headShot?>" alt="<?=$altText?>" />
-    </figure>
+    </decorative-image>
   </div>
 
   <div class="info">

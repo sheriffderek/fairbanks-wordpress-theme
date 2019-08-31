@@ -4,7 +4,12 @@
 Template Name: Blog index
 */
 get_header(); ?>
+
+
+
+<?php include 'modules/page-masthead.php'; ?>
  
+
 
 <section class="page-section blog-stuffs">
 <div class="inner-column">
@@ -15,9 +20,19 @@ get_header(); ?>
     <h1>Paginated list of blog articles should be here...</h1>
     
     <ol>
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
       <li>
-        article
+        article.... 
       </li>
+        
+
+        
+
+      <?php endwhile;
+    endif; ?>
+
+
     </ol>
     
 
