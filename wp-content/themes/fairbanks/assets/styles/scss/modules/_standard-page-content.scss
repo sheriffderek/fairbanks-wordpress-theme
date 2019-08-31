@@ -1,0 +1,25 @@
+
+.standard-page-content {
+  .intro {
+    // background: $gray-light;
+    // padding: $pad;
+    @include callout-voice();
+    + .body {
+      margin-top: $pad*4;
+    }
+  }
+  .body {
+    + .conclusion {
+      margin-top: $pad*6;
+    }
+  }
+  .conclusion {
+    border-top: 2px solid $gray-light;
+    padding-top: $pad*2;
+    @include callout-voice();
+  }
+  .faq-list {
+    margin-top: $pad*6;
+    margin-bottom: $pad*6;
+  }
+}

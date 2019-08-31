@@ -1,22 +1,54 @@
 
-<section class="page-section standard-page-content">
+<section class="page-section standard-page-content two-column">
 <div class="inner-column">
-  
-  <main class="main-column">
-    <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+  <?php
+    $intro = get_field('content_intro');
+    $body = get_field('content_body');
+    $conclusion = get_field('content_conclusion');
+  ?>
 
 
-        <?php the_content(); ?>
+  <main class="primary-content">
+    <article>
 
-        <?php get_template_part('parts/loop', 'page'); ?>
+      <?php if ($intro) { ?>
+        <div class="intro">
+          <?=$intro?>
+        </div>
+      <?php } ?>
+      
+      <rich-text-content class="body">
+        <?php if ($body) { ?>
+          <?=$body?>
+        <?php } else { ?>
+          <h2>There is no content for this page yet</h2>
 
-      <?php endwhile;
-    endif; ?>
+          <p>Visit the site admin panel and add some.</p>
+        <?php } ?>
+      </rich-text-content>
 
-  </main> <!-- end #main -->
+      <?php if ($conclusion) { ?>
+        <div class="conclusion">
+          <?=$conclusion?>
+        </div>
+      <?php } ?>
+    </article>
 
-  <?php get_sidebar(); ?>
+    <?php include 'components/faq-list.php'; ?>
+  </main>
+
+
+  <aside class="alternate-content">
+    <sticky-thing>
+      <?php // $todo... not sure why this isnt' working... https://codepen.io/sheriffderek/pen/GRKvGoq ?>
+      <?php include 'components/contextual-sidebar.php'; ?>
+    </sticky-thing>
+  </aside>
+
 
 </div>
 </section>
+
+
+<?php include 'next-steps.php'; ?>

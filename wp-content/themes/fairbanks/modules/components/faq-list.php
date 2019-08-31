@@ -22,19 +22,23 @@
   </ol>
 
   <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+
+  <script>
+    (function() {
+      // get all of the faqs....
+      // atach an event listener to them... toggle the closest parent? For now... /?
+
+      // var faqToggles = document.querySelectorAll('[rel="faq-toggle-thing"]');
+      // console.log('faqToggles', faqToggles);
+      document.addEventListener('click', function(event) {
+        if ( event.target.matches('[rel="faq-toggle-thing"]') ) {
+          event.target.closest('.faq-card').classList.toggle('open');
+        }
+      });
+    })(); // should probably just be a global functionality - but it's easier to keep track of it here.
+  </script>
+
 <?php } ?>
 
-<script>
-  (function() {
-    // get all of the faqs....
-    // atach an event listener to them... toggle the closest parent? For now... /?
 
-    // var faqToggles = document.querySelectorAll('[rel="faq-toggle-thing"]');
-    // console.log('faqToggles', faqToggles);
-    document.addEventListener('click', function(event) {
-      if ( event.target.matches('[rel="faq-toggle-thing"]') ) {
-        event.target.closest('.faq-card').classList.toggle('open');
-      }
-    });
-  })();
-</script>

@@ -3,6 +3,8 @@
   //
   .inner-column {
     max-width: $tight-column-width;
+    padding-top: $pad*6;
+    padding-bottom: $pad*6;
   }
   .section-heading {
     @include loud-voice();
@@ -11,9 +13,10 @@
   .section-subheading {
     @include standard-voice();
     text-align: center;
+    margin-top: $pad*2;
   }
   .service-list {
-    margin-top: $pad*4;
+    margin-top: $pad*8;
     .service-card {
       margin-bottom: $pad*2
     }

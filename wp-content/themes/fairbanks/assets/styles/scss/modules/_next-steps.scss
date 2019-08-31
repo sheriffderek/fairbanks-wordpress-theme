@@ -1,0 +1,29 @@
+
+.next-steps {
+  background: $gray-light;
+  .inner-column {
+    padding-top: $pad*4;
+    padding-bottom: $pad*8;
+  }
+  decorative-image {
+    max-width: 600px;
+  }
+  .heading {
+    @include medium-voice();
+    margin-top: $pad;
+  }
+  .directions {
+    @include standard-voice();
+    margin-top: $pad;
+  }
+  .button {
+    @include button-standard();
+    margin-top: $pad*2;
+  }
+  @media (min-width: 800px) {
+    .inner-column {
+      padding-top: $pad*8;
+      padding-bottom: $pad*12;
+    }
+  }
+}

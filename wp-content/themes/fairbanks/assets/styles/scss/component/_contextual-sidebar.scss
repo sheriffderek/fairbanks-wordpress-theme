@@ -7,7 +7,7 @@
     .heading {
       @include strong-voice();
       text-transform: uppercase;
-      color: $color;
+      color: $color-dark;
     }
     .message {
       @include standard-voice();
@@ -16,11 +16,18 @@
     .actions {
       margin-top: $pad;
     }
+    @include styled-lists();
     ol {
       margin: $pad 0;
     }
     .link {
       padding: $pad*.5 0;
+      text-decoration: underline;
+      color: $highlight;
+    }
+    .button {
+      @include button-light();
+      margin-top: $pad;
     }
   }
 
@@ -29,11 +36,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: $pad*4;
-    border-top: 1px solid $gray-light;
+    margin-top: $pad*6;
+    border-top: 2px solid $gray-light;
     padding-top: $pad*2;
     .other-ideas {
       flex-basis: 48%;
+    }
+  }
+  @media (min-width: 1000px) {
+    .other-ideas {
+      border-top: 6px solid $gray-light;
+      padding-top: $pad*2;
+      + .other-ideas {
+        margin-top: $pad*6;
+      }
     }
   }
 }

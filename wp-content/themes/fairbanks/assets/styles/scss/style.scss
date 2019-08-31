@@ -117,16 +117,18 @@ $tight-column-width: 1000px;
 $black: black;
 $white: white;
 $color: #00b2b2;
+$color-dark: #006c6c;
 $highlight: #3e89d1;
 $highlight-dark: #13212b;
-$gray: gray;
+$gray: #d0d0d0;
 $gray-light: #f4f4f4;
+$gray-dark: #999;
 
 @mixin button-standard() {
   display: inline-block;
   padding: $pad*1.2 $pad*2; // just going on feel
   background: $highlight;
-  color: white;
+  color: $white;
   min-width: 220px;
   text-align: center;
   width: auto; // for flex parent issues
@@ -137,6 +139,33 @@ $gray-light: #f4f4f4;
     color: inherit;
     font-family: inherit;
     color: inherit;
+  }
+
+  @media (hover:hover) {
+    &:hover {
+      // background-color: $color;
+    }
+  }
+}
+
+@mixin button-light() {
+  @include button-standard();
+  background-color: $gray;
+  @media (hover:hover) {
+    &:hover {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin button-ghost() {
+  @include button-standard();
+  background-color: rgba(0,0,0,.05);
+  color: rgba(0,0,0,.3);
+  @media (hover:hover) {
+    &:hover {
+      background-color: rgba(0,0,0,.1);
+    }
   }
 }
 
@@ -166,6 +195,13 @@ copy-group {
   display: block;
 }
 
+sticky-thing {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+}
+
 
 
 .page-content {
@@ -182,7 +218,7 @@ copy-group {
 }
 
 .page-content {
-  flex: 1;
+  flex: 1; // & ^ for sticky footer (not in place)
 }
 
 .page-section {
@@ -199,20 +235,121 @@ copy-group {
     color: inherit;
     text-decoration: none;
   }
+  p a, li a {
+    display: inline-block;
+    text-decoration: underline;
+    color: $highlight;
+  }
   @media (min-width: 400px) {
     .inner-column {
       width: 96%;
     }
   }
+}
 
+.page-section.two-column {
+  // border: 1px solid red;
+  .inner-column {
+    padding-top: $pad*6;
+    padding-bottom: $pad*6;
+  }
+  .primary-content {
+    // border: 1px solid blue;
+  }
+  .alternate-content {
+    // border: 1px solid orange;
+  }
+
+  @media (min-width: 1000px) {
+    .inner-column {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .primary-content {
+      flex-basis: 100%;
+      padding-right: $pad*4;
+    }
+    .alternate-content {
+      width: 100%;
+      max-width: 300px;
+      margin-left: $pad*6;
+    }
+  }
+}
+
+@mixin styled-lists() {
+  ul, ol {
+    margin-top: $pad*3;
+    margin-bottom: $pad*3;
+    padding-left: 1.2rem;
+  }
+  ul {
+    list-style: initial;
+  }
+  ol {
+    list-style: initial;
+  }
+}
+
+// $type
+.page-section {
+  // $temp - hiding it in here / so we don't break the rest
   rich-text-content, .rich-text-content {
     display: block;
-    p { // $temp - hiding it in here / so we don't break the rest
+    p, li {
+      a {
+        display: inline-block;
+      }
+    }
+    p {
+      @include standard-voice();
       & + p {
         margin-top: $pad;
       }
-      a {
-        display: inline-block;
+      + h2 {
+        margin-top: $pad*6;
+      }
+      + h3 {
+        margin-top: $pad*4;
+      }
+      em {
+        font-style: italic;
+      }
+      strong, b {
+        font-weight: 700;
+      }
+    }
+    h1 {
+      @include extra-loud-voice();
+      + p {
+        margin-top: $pad*2;
+      }
+    }
+    h2 {
+      @include loud-voice();
+      + p {
+        margin-top: $pad*2;
+      }
+    }
+    h3 {
+      @include medium-voice();
+      color: $color;
+      + p {
+        margin-top: $pad*2;
+      }
+    }
+    @include styled-lists();
+    ul, ol {
+      + h3 {
+        margin-top: $pad*4;
+      }
+    }
+    li {
+      color: $color;
+      @include standard-voice();
+      + li {
+        margin-top: $pad*1.5;
       }
     }
   }
@@ -242,6 +379,10 @@ copy-group {
 
 @import "modules/blog-index";
 @import "modules/service-index";
+
+@import "modules/standard-page-content";
+@import "modules/next-steps";
+
 // $temp
 .testimo {
   padding: $pad*4 0;
@@ -263,6 +404,24 @@ copy-group {
 .big {
   @include medium-voice();
 }
+
+.page-header {
+  background: $color;
+  color: $white;
+  .inner-column {
+    padding-top: $pad*8;
+    padding-bottom: $pad*8;
+  }
+  .page-title {
+    @include loud-voice();
+  }
+  .teaser {
+    @include standard-voice();
+    margin-top: $pad*2;
+  }
+}
+
+
 
 //// $pages
 // @import "pages/our-team";

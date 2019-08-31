@@ -10,6 +10,13 @@
 
 get_header(); ?>
 
+INDEX...
+
+
+<?php get_footer(); ?>
+
+<?php /*
+
 <div class="content">
   <div class="grid-container">
 
@@ -40,4 +47,5 @@ get_header(); ?>
   </div>
 </div> <!-- end #content -->
 
-<?php get_footer(); ?>
+*/ ?>
+

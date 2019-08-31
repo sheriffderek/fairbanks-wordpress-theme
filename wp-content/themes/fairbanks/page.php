@@ -10,11 +10,27 @@ get_header(); ?>
 
 
 
+
+<?php // loop stuff up here? 
+
+// ???
+
+// ,,,,,,,,,,, ?>
+
+
+<?php //the_content(); ?>
+
+
+
+
+
+
+
 <?php if ( is_page('about-us') ) { ?>
 
   <?php include 'modules/page-masthead.php'; ?>
 
-  <?php include 'modules/standard-page-content.php'; ?>  
+  <?php include 'modules/standard-page-content.php'; ?>
 
 <?php } ?>
 

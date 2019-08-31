@@ -15,7 +15,7 @@ get_header(); ?>
 
   <?php
 
-  $serviceType = get_field('associated_service_type');
+  $serviceType = get_field('service_type');
 
   $service_options = array(
     'post_type' => array('service'),
@@ -46,13 +46,14 @@ get_header(); ?>
     <?php // get data
       $teaser = get_field('teaser');
       $title = get_the_title();
+      $image = ( get_field('general_image') ? get_field('general_image')['url'] : "https://placehold.it/1600x900" );
     ?>
 
     <section class="page-section service">
     <div class="inner-column">
 
       <decorative-image>
-        <img src="https://placehold.it/1600x900" />
+        <img src="<?=$image?>" />
       </decorative-image>
 
       <copy-group>
@@ -60,7 +61,7 @@ get_header(); ?>
 
         <h2 class="teaser"><?=$teaser?></h2>
 
-        <a class="link" href="<?php the_permalink(); ?>">
+        <a class="button" href="<?php the_permalink(); ?>">
           <span>Learn more</span>
         </a>
       </copy-group>

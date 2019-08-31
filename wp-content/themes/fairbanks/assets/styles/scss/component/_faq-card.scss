@@ -4,16 +4,17 @@
   .question {
     position: relative;
     @include medium-voice();
-    padding: $pad 0;
+    padding: $pad*2 0;
     cursor: pointer;
     // $note - could(should) - technically be a button... 
     user-select: none;
-    padding-right: $pad*2;
+    padding-right: $pad*3;
     .icon {
       position: absolute;
-      top: $pad;
+      top: $pad*2;
       right: 0;
-      color: $gray-light;
+      color: $gray;
+      pointer-events: none;
     }
   }
   .answer {
@@ -24,7 +25,7 @@
     cursor: pointer;
   }
   .button {
-    @include button-standard();
+    @include button-light();
     margin-top: $pad*2;
   }
   &:not(.open) {

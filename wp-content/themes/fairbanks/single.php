@@ -8,78 +8,145 @@ get_header(); ?>
 
 
 
-      <?php if ( is_singular('team_members') ) { ?>
 
-        <?php // get data
-          $name = get_field('name');
-          $title = get_field('title');
-          $intro = get_field('bio_introduction');
-          $body = get_field('bio_body');
-          $headShot = get_field('head_shot')['url'];
-          $altText = "" . $name . " head shot";
-        ?>
+  <?php if ( is_singular('team_members') ) { ?>
 
-        <section class="page-section team-member-detail">
-        <div class="inner-column">
+    <?php // get data
+      $name = get_field('name');
+      $title = get_field('title');
+      $intro = get_field('bio_introduction');
+      $body = get_field('bio_body');
+      $headShot = get_field('head_shot')['url'];
+      $altText = "" . $name . " head shot";
+    ?>
 
-          <article>
+    <section class="page-section bread">
+    <div class="inner-column">
+      
+      <?php include('modules/components/bread-crumbs.php'); ?>
 
-            <div class="portrait">
-              <figure class="image head-shot">
-                <img src="<?=$headShot?>" alt="<?=$altText?>" />
-              </figure>
-            </div>
+    </div>
+    </section>
 
-            <div class="info">
-              <h1 class="name"><?=$name?></h1>
 
-              <?php if ($title) { ?>
-                <h2 class="title"><?=$title?></h2>
-              <?php } ?>
+    <section class="page-section team-member-detail">
+    <div class="inner-column">
 
-              <div class='introduction'>
-                <?=$intro?>
+      <article>
 
-                <?=$body?>
-              </div>
-            </div>
-          </article>
-
+        <div class="portrait">
+          <decorative-image class="head-shot">
+            <img src="<?=$headShot?>" alt="<?=$altText?>" />
+          </decorative-image>
         </div>
-        </section>
+
+        <div class="info">
+          <h1 class="name"><?=$name?></h1>
+
+          <?php if ($title) { ?>
+            <h2 class="title"><?=$title?></h2>
+          <?php } ?>
+
+          <div class='introduction'>
+            <?=$intro?>
+
+            <?=$body?>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </section>
 
 
-        <?php include 'modules/faq-intro.php'; ?>
+    <?php include 'modules/faq-intro.php'; ?>
 
-      <?php } // end team-member-detail ?>
-
-
-
-      <?php if ( is_singular('service') ) { ?>
-
-        <?php // get data
-          $teaser = get_field('teaser');
-          $title = get_the_title();
-          $fullArticle = get_field('full_article');
-        ?>
+  <?php } // end team-member-detail ?>
 
 
-        <section class="page-section page-name">
-        <div class="inner-column">
+
+  <?php if ( is_singular('service') ) { ?>
+
+
+    <header class="page-section page-header">
+    <div class="inner-column">
+
+      <?php
+        $pageTitle = get_the_title();
+        $teaser = get_field('teaser');
+      ?>
+
+      <h1 class="page-title"><?=$pageTitle?></h1>
+
+      <p class="teaser"><?=$teaser?></p>
+
+    </div>
+    </header>
+
+
+    <section class="page-section bread">
+    <div class="inner-column">
+      
+      <?php include('modules/components/bread-crumbs.php'); ?>
+
+    </div>
+    </section>
+
+
+    <section class="page-section standard-page-content two-column">
+    <div class="inner-column">
+
+      <?php
+        $intro = get_field('intro');
+        $body = get_field('body');
+        $conclusion = get_field('conclusion');
+      ?>
+
+      <main class="primary-content">
+
+        <article>
+          <?php if ($intro) { ?>
+            <div class="intro">
+              <?=$intro?>
+            </div>
+          <?php } ?>
           
-          <h1 class="big"><?=$title?></h1>
+          <rich-text-content class="body">
+            <?php if ($body) { ?>
+              <?=$body?>
+            <?php } else { ?>
+              <h3>There is no content for this service yet</h3>
 
-          <?php // include 'modules/standard-page-content.php'; ?>  
-
-          <rich-text-content>
-            <?=$fullArticle?>
-            <p>Then all the service info goes here...</p>
+              <p>Visit the site admin panel and add some.</p>
+            <?php } ?>
           </rich-text-content>
 
-        </div>
-        </section>
+          <?php if ($conclusion) { ?>
+            <div class="conclusion">
+              <?=$conclusion?>
+            </div>
+          <?php } ?>
+        </article>
 
-      <?php } // end service-detail ?>
+        <?php include 'modules/components/faq-list.php'; ?>
+      </main>
+
+
+      <aside class="alternate-content">
+        <sticky-thing>
+          <?php // $todo... not sure why this isnt' working... https://codepen.io/sheriffderek/pen/GRKvGoq ?>
+          <?php include 'modules/components/contextual-sidebar.php'; ?>
+        </sticky-thing>
+      </aside>
+
+
+    </div>
+    </section>
+
+
+    <?php include 'modules/next-steps.php'; ?>
+
+  <?php } // end service-detail ?>
 
 
 

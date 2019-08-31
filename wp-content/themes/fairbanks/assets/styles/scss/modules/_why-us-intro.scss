@@ -3,5 +3,7 @@
   //
   .inner-column {
     max-width: $tight-column-width;
+    padding-top: $pad*4;
+    padding-bottom: $pad*8;
   }
 }
