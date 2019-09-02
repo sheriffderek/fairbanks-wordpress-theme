@@ -1,0 +1,11 @@
+
+.simple-visual-break {
+  //
+  .inner-column {
+    //
+  }
+  
+  .message {
+    @include medium-voice();
+  }
+}
