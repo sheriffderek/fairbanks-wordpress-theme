@@ -1,0 +1,58 @@
+
+.small-screen-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //
+  background: $color;
+  //
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  .menu-header {
+    @include medium-voice();
+  }
+  .menu {
+    width: 100%;
+    max-width: 200px;
+    //
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .menu-item {
+    // border: 2px solid green;
+    a {
+      // border: 2px solid blue;
+    }
+    &.active {
+      a {
+        // border: 2px solid red;
+      }
+    }
+  }
+  .menu-toggle {
+    cursor: pointer;
+    position: fixed;
+    top: $pad;
+    right: $pad;
+    padding: $pad; // for big fingers
+  }
+}
+
+// when hidden
+.site:not(.site-menu-open) {
+  .small-screen-menu {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.8);
+  }
+}
