@@ -1,0 +1,10 @@
+
+social-networks {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .link {
+    padding: $pad;
+  }
+}
