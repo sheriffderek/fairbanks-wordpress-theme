@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   //
-  background: $color;
+  background-color: $gray; // just because the logo is blue and doesn't land.... $todo
   //
   transition: transform .2s ease-in-out, opacity .2s ease-in-out;
   //
@@ -32,7 +32,7 @@
     padding: $pad;
   }
   .company-logo {
-    max-width: 160px;
+    max-width: 220px;
   }
   .nav-menu {
     width: 100%;
