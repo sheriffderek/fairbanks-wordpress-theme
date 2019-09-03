@@ -20,7 +20,7 @@
 
   site-branding {
     display: block;
-    flex-basis: 110px;
+    flex-basis: 140px;
     flex-shrink: 0;
   }
 
@@ -38,6 +38,10 @@
     align-items: center;
     //
     padding-bottom: $pad*.5;
+  }
+  
+  .user {
+    display: none;
   }
 
   .contact-info {
