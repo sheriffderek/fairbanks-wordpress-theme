@@ -5,5 +5,10 @@ social-networks {
   align-items: center;
   .link {
     padding: $pad;
+    @media (hover:hover) {
+      &:hover {
+        color: $color;
+      }
+    }
   }
 }

@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   //
-  background-color: $gray; // just because the logo is blue and doesn't land.... $todo
+  background-color: $gray-dark; // just because the logo is blue and doesn't land.... $todo
   //
   transition: transform .2s ease-in-out, opacity .2s ease-in-out;
   //
@@ -37,6 +37,7 @@
   .nav-menu {
     width: 100%;
     max-width: 300px;
+    margin-top: $pad;
   }
   .menu-item {
     @include strong-voice();
@@ -59,6 +60,18 @@
     right: $pad;
     padding: $pad; // for big fingers
     color: $white;
+  }
+  @media (min-width: 560px) {
+    .company-logo {
+      max-width: 300px;
+    }
+    .nav-menu {
+      max-width: 500px;
+      margin-top: $pad*2;
+    }
+    .menu-item {
+      @include medium-voice();
+    }
   }
 }
 

@@ -56,6 +56,7 @@
     }
     .menu-item {
       a {
+        @include strong-voice();
         padding: $pad*.5 $pad;
         //
         text-decoration: none; // $why - $todo
@@ -71,7 +72,7 @@
   }
 
   // small menu only
-  @media (max-width: 699px) {
+  @media (max-width: 989px) {
     .main-menu {
       display: none;
     }
@@ -81,7 +82,10 @@
   }
 
   // with full menu
-  @media (min-width: 700px) {
+  @media (min-width: 990px) {
+    site-branding {
+      flex-basis: 240px;
+    }
     .main-menu {
       border-top: 1px solid $ghost;
     }
@@ -91,6 +95,9 @@
     .menu-toggle {
       display: none;
     }
+  }
+  &.with-background {
+    background-color: $gray-dark; // $todo - put to $gray-dark?
   }
 }
 

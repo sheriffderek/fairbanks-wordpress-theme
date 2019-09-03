@@ -1,5 +1,14 @@
 
-<header class="page-section site-header">
+<?php
+  $hasMastheadImage = get_field('banner_single')['image'];
+  if ($hasMastheadImage) {
+    $headerStyle = "";
+  } else {
+    $headerStyle = "with-background";
+  }
+?>
+
+<header class="page-section site-header <?=$headerStyle?>">
 <div class="inner-column">
 
   <site-branding>

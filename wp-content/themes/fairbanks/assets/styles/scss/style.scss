@@ -124,7 +124,7 @@ $highlight: #3e89d1;
 $highlight-dark: #13212b;
 $gray: #d0d0d0;
 $gray-light: #f4f4f4;
-$gray-dark: #999;
+$gray-dark: #878787;
 
 $ghost: rgba($white, .3);
 $shadow: rgba($black, .3);
@@ -428,7 +428,7 @@ sticky-thing {
   background: $color;
   color: $white;
   .inner-column {
-    padding-top: $pad*8;
+    padding-top: $pad*16;
     padding-bottom: $pad*8;
   }
   .page-title {
