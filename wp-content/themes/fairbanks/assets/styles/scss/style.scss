@@ -112,10 +112,12 @@ CSS file.
 $pad: 10px;
 $standard-column-width: 1260px;
 $tight-column-width: 1000px;
+$wide-column-width: 1600px;
 
 // $colors
 $black: black;
 $white: white;
+
 $color: #00b2b2;
 $color-dark: #006c6c;
 $highlight: #3e89d1;
@@ -123,6 +125,9 @@ $highlight-dark: #13212b;
 $gray: #d0d0d0;
 $gray-light: #f4f4f4;
 $gray-dark: #999;
+
+$ghost: rgba($white, .3);
+$shadow: rgba($black, .3);
 
 @mixin button-standard() {
   display: inline-block;
@@ -174,6 +179,14 @@ $gray-dark: #999;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  height: 32px;
+  width: 32px;
+  display: inline-block; 
+  fill: currentColor;
+  pointer-events: none; // just a quick hack to avoid dealing with event delegation for now - $todo
 }
 
 // $basics // custom elements
@@ -385,7 +398,10 @@ sticky-thing {
 @import "modules/standard-page-content";
 @import "modules/next-steps";
 
+@import "modules/site-header";
 @import "modules/small-screen-menu";
+@import "modules/site-footer";
+
 // $temp
 .testimo {
   padding: $pad*4 0;

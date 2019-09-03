@@ -17,21 +17,34 @@
   background: $color;
   //
   transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-  .menu-header {
-    @include medium-voice();
-  }
-  .menu {
+  //
+  z-index: 20;
+  center-position {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
     //
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  .menu-header {
+    @include medium-voice();
+    padding: $pad;
+  }
+  .company-logo {
+    max-width: 160px;
+  }
+  .nav-menu {
+    width: 100%;
+    max-width: 300px;
   }
   .menu-item {
-    // border: 2px solid green;
+    @include strong-voice();
     a {
-      // border: 2px solid blue;
+      display: block;
+      color: $white;
+      text-decoration: none;
+      padding: $pad;
     }
     &.active {
       a {
@@ -45,6 +58,7 @@
     top: $pad;
     right: $pad;
     padding: $pad; // for big fingers
+    color: $white;
   }
 }
 

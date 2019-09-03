@@ -2,22 +2,39 @@
 <header class="page-section site-header">
 <div class="inner-column">
 
-  <a class="home-link" href="<?php echo home_url(); ?>">
-    <decorative-image class="company-logo">
-      <img src="https://placehold.it/400x150" alt="Company logo" />
-    </decorative-image>
-  </a>
+  <site-branding>
+    <a class="home-link" href="<?php echo home_url(); ?>">
+      <?php include('components/company-logo.php'); ?>
+    </a>
+  </site-branding>
 
-  <nav class="main-menu">
-    <?php
-      wp_nav_menu(
-        array(
-          'theme_location' => 'secondary',
-          'container' => false,
-        )
-      );
-    ?>
-  </nav>
+  <site-information>
+
+    <site-actions>
+
+      <div class="contact-info">510-339-1483 | LIC# 0C77825</div>
+
+      <button class="user">
+        <svg class="icon-x"><use xlink:href="#icon-user"></use></svg>
+      </button>
+
+      <button class="menu-toggle" rel="site-menu-toggle">
+        <svg class="icon-x"><use xlink:href="#icon-menu"></use></svg>
+      </button>
+    </site-actions>
+
+    <nav class="main-menu">
+      <?php
+        wp_nav_menu(
+          array(
+            'theme_location' => 'secondary',
+            'container' => false,
+            'menu_class' => 'nav-menu',
+          )
+        );
+      ?>
+    </nav>
+  </site-information>
 
 </div>
 </header>
