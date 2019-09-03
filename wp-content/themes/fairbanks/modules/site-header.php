@@ -1,7 +1,7 @@
 
 <?php
   $hasMastheadImage = get_field('banner_single')['image'];
-  if ($hasMastheadImage) {
+  if ( $hasMastheadImage || is_front_page() || is_page('home-page') ) {
     $headerStyle = "";
   } else {
     $headerStyle = "with-background";
