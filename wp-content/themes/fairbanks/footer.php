@@ -7,6 +7,9 @@
 
 		<?php wp_footer(); ?>
 
+    <?php // $todo - get this into the gulp build ?>
+    <script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.js'></script>
+
     <script>
       (function() {
 

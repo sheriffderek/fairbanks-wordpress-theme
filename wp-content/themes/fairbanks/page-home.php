@@ -17,7 +17,7 @@ Template Name: Home Page
 */ ?>
 
 
-<?php include 'modules/landing-splash.php'; ?>
+<?php include 'modules/landing-splash-slider.php'; ?>
 
 
 <?php include 'modules/services-intro.php'; ?>
