@@ -27,7 +27,7 @@
 
   <h2>Slider data:</h2>
 
-  <ul class="slide-list">
+  <ul class="slide-list" data-flickity='{ "cellAlign": "left", "contain": true }'>
     <?php
       $rows = get_field('slide');
     ?>

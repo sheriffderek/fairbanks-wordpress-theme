@@ -369,6 +369,10 @@ sticky-thing {
 }
 
 
+
+//// $third party
+@import "third-party/flickity";
+
 //// $components
 @import "component/faq-list";
 @import "component/faq-card";
@@ -377,8 +381,6 @@ sticky-thing {
 @import "component/bread-crumbs";
 @import "component/social-networks";
 @import "component/contextual-sidebar";
-
-
 
 //// $modules
 @import "modules/page-masthead";
