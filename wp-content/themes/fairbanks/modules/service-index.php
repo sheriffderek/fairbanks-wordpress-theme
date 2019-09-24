@@ -87,4 +87,11 @@ get_header(); ?>
 </ul>
 
 
+
+
+<?php include('simple-visual-break.php'); ?>
+
+
+
+
 <?php get_footer(); ?>
