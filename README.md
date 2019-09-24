@@ -18,7 +18,7 @@ Up to you. Master is the latest.
 ## local MAMP setup
 is what we used
 
-(this repo is only the theme and a few nessesary files / see the gitignore)
+(this repo is only the theme and a few nessesary files / see the gitignore) 
 
 
 ## build
@@ -48,3 +48,8 @@ make admin changes on the stage and pull them down to local - (but you'll have t
 * code up
 
 This way - the client can use the stage to fill out the data while you work. (but you'll have to set things up however you want them to be.)
+
+
+## Other notes
+
+for the slider - we used flickity. Those other slider plugins can be removed
