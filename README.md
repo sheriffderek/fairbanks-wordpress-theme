@@ -18,6 +18,8 @@ Up to you. Master is the latest.
 ## local MAMP setup
 is what we used
 
+(this repo is only the theme and a few nessesary files / see the gitignore)
+
 
 ## build
 there's a gulp task - check the theme README SCSS - see theme README
