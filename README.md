@@ -1,24 +1,48 @@
 # fairbanks-wordpress-theme
+Custom WordPress theme for Dawn Fairbanks Insurance -
 
-## MAMP setup
-... 
+
+## backstory
+Started sometime in 2017 with Kyle. Buggeted at ~120 hours.
+
+Back and fourth for various reasons until September 2019 - at which time / @sheriffderek hopped in to finish the site. After 17 hours of work (totalling *well below* budget) (and probably about 4 hours to finish the thing) - Dawn got antsy and decided to have Kevin at C3i3 take over. *the site would have been done on Sep 20th* `¯\_(ツ)_/¯`
+
+So - as of Thursday, September 19th - it's up to Kevin @ http://www.c3i3.com
+
+
+## branches
+
+Up to you. Master is the latest.
+
+
+## local MAMP setup
+is what we used
+
+
+## build
+there's a gulp task - check the theme README SCSS - see theme README
+
 
 ## initial database migration
 
-wp-migrate-pro key: `14335cac-ef27-4ee2-8604-f01eb8ea6d2e`
+wp-migrate-pro key: `14335cac-ef27-4ee2-8604-f01eb8ea6d2e` (this license will stay active until the site is migrated)
 
-note the wp_ prefix is obb_
+You can ask Dawn for her staging login - There's no saying who's adding what content when - so, we're not going to provide a static file.
+
+*note the wp_ prefix is obb_*
+
 
 ## deployment
 
-pushing code to master will trigger githook to send it to the stage
+We setup SpinupWP and when pushing code to master will trigger githook to send it to the stage - (but you'll have to set things up however you want them to be.)
+
 
 ## staying in sync
 
-make admin changes on the stage and pull them down to local
+make admin changes on the stage and pull them down to local - (but you'll have to set things up however you want them to be.)
 
 * data down
 
 * code up
 
-This way - the client can use the stage to fill out the data while you work.
+This way - the client can use the stage to fill out the data while you work. (but you'll have to set things up however you want them to be.)
