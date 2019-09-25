@@ -10,6 +10,23 @@ Back and fourth for various reasons until September 2019 - at which time / @sher
 So - as of Thursday, September 19th - it's up to Kevin @ http://www.c3i3.com
 
 
+## educational video for dawn and friends
+
+This is a walkthrough of the admin
+
+https://vimeo.com/359481820/446595e651
+
+
+## staging server
+
+https://fairbanks.reputable.agency/wp-admin
+
+- user: generic-admin
+- pass: opensesame
+- 
+- ask Dawn for her login - (to see the reduced admin)
+
+
 ## branches
 
 Up to you. Master is the latest.
