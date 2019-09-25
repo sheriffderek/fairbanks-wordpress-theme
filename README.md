@@ -10,6 +10,7 @@ Back and fourth for various reasons until September 2019 - at which time / @sher
 So - as of Thursday, September 19th - it's up to Kevin @ http://www.c3i3.com
 
 
+
 ## educational video for dawn and friends
 
 This is a walkthrough of the admin
@@ -25,6 +26,11 @@ https://fairbanks.reputable.agency/wp-admin
 - pass: opensesame
 - 
 - ask Dawn for her login - (to see the reduced admin)
+
+- [ ] this repo isn't in-house - so, plan where you'll want the code to live going forward
+- [ ] this stage wont be used going forward
+- [ ] dawns dns isn't connected
+- [ ] so - basically - you'll need to build out whatever system you intend to use
 
 
 ## branches
