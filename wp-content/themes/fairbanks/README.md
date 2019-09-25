@@ -3,6 +3,11 @@ Currently using Foundation 6.5.1.
 ## JointsWP Requirements
 JointsWP requires [Node.js](https://nodejs.org) v6.9.x or newer. This doesn't mean you need to understand Node (or even Gulp) - it's just the steps we need to take to make sure all of our development tools are installed. 
 
+
+- ((( JointsWP was initially used - but is basically sidestepped / so - you can probably remove most of it....)))
+
+- Styles are in the assets folder for some reason. Look those over - and things should make sense.
+
 ## Getting Started 
 ### Download JointsWP and install dependencies with npm 
 ```bash
