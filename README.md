@@ -15,6 +15,7 @@ https://fairbanks.reputable.agency/wp-admin
 - [ ] this stage wont be used going forward
 - [ ] dawns dns isn't connected
 - [ ] so - basically - you'll need to build out whatever system you intend to use - and setup WordPress - and then add this theme - and migrate the database
+- [ ] please email derek@sheriffderek.consulting - *when* the site is migrated - so that we can take down our staging server. Thanks!
 
 
 ## local MAMP setup
